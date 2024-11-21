@@ -104,8 +104,21 @@
         <!-- Data table plugin-->
         <script type="text/javascript" src="view/assets/admin/js/plugins/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="view/assets/admin/js/plugins/dataTables.bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.11.5/sorting/datetime-moment.js"></script>
+
         <script type="text/javascript">
-                                                        $('#sampleTable').DataTable();
+//                                                        $('#sampleTable').DataTable();
+//                                                        $(document).ready(function () {
+    $(document).ready(function () {
+    // Register Moment.js format
+    $.fn.dataTable.moment('YYYY-MM-DD HH:mm:ss.SSS');
+
+    // Initialize DataTable
+    $('#sampleTable').DataTable({
+        "order": [[4, "desc"]] // Index 2 for the 'orderdate' column
+    });
+});
                                                         //Thời Gian
                                                         function time() {
                                                             var today = new Date();

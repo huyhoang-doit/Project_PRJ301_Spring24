@@ -36,6 +36,7 @@ public class ManageOrderServlet extends HttpServlet {
             OrderDAO oDao = new OrderDAO();
             OrderItemDAO oIDao = new OrderItemDAO();
             List<OrderDTO> listOrders = oDao.getAllOrders();
+            System.out.println("listOrder:" + listOrders);
             String action = request.getParameter("action");
 
             if ("showdetail".equals(action)) {
